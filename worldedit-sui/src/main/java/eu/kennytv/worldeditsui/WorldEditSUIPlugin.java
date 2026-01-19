@@ -40,6 +40,7 @@ import eu.kennytv.worldeditsui.compat.we7.ProtectedRegionHelper7;
 import eu.kennytv.worldeditsui.compat.we7.RegionHelper7;
 import eu.kennytv.worldeditsui.drawer.DrawManager;
 import eu.kennytv.worldeditsui.drawer.base.DrawedType;
+import eu.kennytv.worldeditsui.listener.ItemHeldListener;
 import eu.kennytv.worldeditsui.listener.PlayerJoinListener;
 import eu.kennytv.worldeditsui.listener.PlayerQuitListener;
 import eu.kennytv.worldeditsui.listener.WESelectionListener;
@@ -124,6 +125,7 @@ public final class WorldEditSUIPlugin extends JavaPlugin {
         pm.registerEvents(new PlayerJoinListener(this), this);
         pm.registerEvents(new PlayerQuitListener(userManager), this);
         pm.registerEvents(new WESelectionListener(this), this);
+        pm.registerEvents(new ItemHeldListener(this), this);
 
         final PluginCommand command = getCommand("worldeditsui");
         command.setExecutor(new WESUICommand(this));
